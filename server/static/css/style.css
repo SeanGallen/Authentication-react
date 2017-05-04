@@ -22,8 +22,7 @@ a:hover {
   padding: 10px 15px;
   margin-bottom: 50px;
 }
-
-.top-bar: :after {
+.top-bar::after {
   content: '';
   display: block;
   clear: both;
@@ -66,3 +65,4 @@ a:hover {
   padding: 0 16px;
   color: green;
 }
+
