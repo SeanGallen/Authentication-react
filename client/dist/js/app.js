@@ -41369,10 +41369,8 @@
 	    value: function processForm(event) {
 	      var _this2 = this;
 
-	      // prevent default action. in this case, action is the form submission event
 	      event.preventDefault();
 
-	      // create a string for an HTTP body message
 	      var email = encodeURIComponent(this.state.user.email);
 	      var password = encodeURIComponent(this.state.user.password);
 	      var formData = 'email=' + email + '&password=' + password;
@@ -41384,18 +41382,13 @@
 	      xhr.responseType = 'json';
 	      xhr.addEventListener('load', function () {
 	        if (xhr.status === 200) {
-	          // success
-
-	          // change the component-container state
 	          _this2.setState({
 	            errors: {}
 	          });
 
 	          console.log('The form is valid');
 	        } else {
-	          // failure
 
-	          // change the component state
 	          var errors = xhr.response.errors ? xhr.response.errors : {};
 	          errors.summary = xhr.response.message;
 
@@ -41406,13 +41399,6 @@
 	      });
 	      xhr.send(formData);
 	    }
-
-	    /**
-	     * Change the user object.
-	     *
-	     * @param {object} event - the JavaScript event object
-	     */
-
 	  }, {
 	    key: 'changeUser',
 	    value: function changeUser(event) {
@@ -41424,11 +41410,6 @@
 	        user: user
 	      });
 	    }
-
-	    /**
-	     * Render the component.
-	     */
-
 	  }, {
 	    key: 'render',
 	    value: function render() {
